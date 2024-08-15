@@ -1,70 +1,160 @@
-# Getting Started with Create React App
+# Job Listing and Bookmarking App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Overview
 
-## Available Scripts
+This is a React Native application for Android that allows users to browse job listings, view detailed information about each job, and bookmark their favorite jobs for offline viewing. The app features a bottom navigation with two sections: "Jobs" and "Bookmarks". Jobs are fetched from a remote API with infinite scrolling, and all bookmarked jobs are stored locally.
 
-In the project directory, you can run:
+## Features
 
-### `npm start`
+- **Job Listing**: Browse job listings with infinite scroll.
+- **Job Details**: View detailed information about a specific job.
+- **Bookmarking**: Bookmark jobs for offline access.
+- **Offline Viewing**: All bookmarked jobs are stored in a local database for offline viewing.
+- **Responsive UI**: Clean and responsive user interface.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Installation
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+1. **Clone the Repository:**
 
-### `npm test`
+    ```bash
+    git clone https://github.com/yourusername/job-listing-app.git
+    cd job-listing-app
+    ```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+2. **Install Dependencies:**
 
-### `npm run build`
+    ```bash
+    npm install
+    ```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+    or
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+    ```bash
+    yarn install
+    ```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+3. **Run the Application:**
 
-### `npm run eject`
+    ```bash
+    npx react-native run-android
+    ```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+    Ensure you have an Android emulator running or a physical device connected.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## API
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+The app fetches job listings from the following API:
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+- **Endpoint**: `https://testapi.getlokalapp.com/common/jobs?page=1`
 
-## Learn More
+## Project Structure
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Here's the README.md content formatted as code:
 
-### Code Splitting
+markdown
+Copy code
+# Job Listing and Bookmarking App
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## Overview
 
-### Analyzing the Bundle Size
+This is a React Native application for Android that allows users to browse job listings, view detailed information about each job, and bookmark their favorite jobs for offline viewing. The app features a bottom navigation with two sections: "Jobs" and "Bookmarks". Jobs are fetched from a remote API with infinite scrolling, and all bookmarked jobs are stored locally.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## Features
 
-### Making a Progressive Web App
+- **Job Listing**: Browse job listings with infinite scroll.
+- **Job Details**: View detailed information about a specific job.
+- **Bookmarking**: Bookmark jobs for offline access.
+- **Offline Viewing**: All bookmarked jobs are stored in a local database for offline viewing.
+- **Responsive UI**: Clean and responsive user interface.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## Installation
 
-### Advanced Configuration
+1. **Clone the Repository:**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+    ```bash
+    git clone https://github.com/yourusername/job-listing-app.git
+    cd job-listing-app
+    ```
 
-### Deployment
+2. **Install Dependencies:**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+    ```bash
+    npm install
+    ```
 
-### `npm run build` fails to minify
+    or
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+    ```bash
+    yarn install
+    ```
+
+3. **Run the Application:**
+
+    ```bash
+    npx react-native run-android
+    ```
+
+    Ensure you have an Android emulator running or a physical device connected.
+
+## API
+
+The app fetches job listings from the following API:
+
+- **Endpoint**: `https://testapi.getlokalapp.com/common/jobs?page=1`
+
+## Project Structure
+
+JobApp/
+├── src/
+│ ├── components/
+│ ├── pages/
+│ ├── App.js
+│ ├── AppNavigator.js
+│ └── api/
+├── android/
+├── ios/
+├── package.json
+└── README.md
+
+
+### Key Files:
+
+- **`App.js`**: Main entry point of the app.
+- **`AppNavigator.js`**: Handles navigation between different screens.
+- **`components/`**: Contains reusable UI components like `JobCard`, `BookmarkButton`, etc.
+- **`pages/`**: Contains screens for "Jobs", "Bookmarks", and "JobDetails".
+- **`api/jobs.js`**: Contains functions to fetch job data from the API.
+
+## Libraries Used
+
+- **React Navigation**: For handling navigation between screens.
+- **Axios**: For making API requests.
+- **AsyncStorage or SQLite**: For storing bookmarked jobs locally.
+- **React Native Paper / NativeBase**: For UI components (if used).
+
+## How It Works
+
+- **Jobs Screen**: Fetches job listings from the API using infinite scrolling. Displays each job in a card format showing the title, location, salary, and phone number. Users can click on a job card to see more details.
+  
+- **Job Details Screen**: Displays detailed information about the selected job, such as job description, requirements, etc.
+
+- **Bookmarks Screen**: Shows a list of jobs that the user has bookmarked. These jobs are stored locally, allowing offline access.
+
+## State Management
+
+The application handles various states such as loading, error, and empty data. Appropriate messages or UI elements are displayed based on the current state.
+
+## Future Enhancements
+
+- **Search Functionality**: Implement a search feature to allow users to search for specific jobs.
+- **Filter and Sort**: Add options to filter and sort job listings.
+- **Push Notifications**: Notify users when new jobs are posted that match their preferences.
+
+## Contributing
+
+Contributions are welcome! Feel free to open an issue or submit a pull request.
+
+## License
+
+This project is licensed under the MIT License.
